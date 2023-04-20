@@ -1,5 +1,25 @@
 # Simple ajax crud
-Best reason why we create this program is for educational purposes. If you are a back end developer and still using PHP programming language, you can take this program for your crud web app. Don't forget you need to refactoring code and think about security if you already take this program. This web app has been update from <a href="https://github.com/zainamir07">zainamir07</a>. Special thanks for you bro.
+1. We create this simple text to speech converter with different languages like PHP, JS, MYSQL.
+2. You use it simply from [here](https://detechnocrats.000webhostapp.com/simple-ajax-crud/index.php/)
+3. You can modify the source code for educational purposes.
+4. We create this project to contribute towards society as it's the mission of "De-Technocrats".
+
+## Want to Contribute?
+
+Thank you for considering contributing to our project! We appreciate any help or
+contributions you can offer, whether it's reporting a bug, submitting a feature
+request, or contributing code.
+
+If you're interested in contributing code, please follow these steps:
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b feature/your-branch-name`)
+3. Make your changes and commit them (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-branch-name`)
+5. Create a new Pull Request
+
+Please make sure to test your changes thoroughly and provide a clear description
+of the problem you're trying to solve or the feature you're adding.
 
 # Screenshot
 ![Screenshot (449)](https://user-images.githubusercontent.com/83481679/233404028-a36bd40f-30d5-4c48-ab48-6ead6b7e2681.png)
