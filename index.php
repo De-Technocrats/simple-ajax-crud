@@ -59,7 +59,12 @@
 
                                     <div class="mb-3">
                                         <label for="gender" class="form-label">Gender</label>
-                                        <input type="text" class="form-control" id="gender" name="gender" autocomplete='off' />
+                                        <select name="gender" id="gender" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
 
                                     <div class="modal-footer">
@@ -375,8 +380,78 @@
                 $(this).find('#modal-edit').html("")
             })
 
-        })
-    </script>
+    
+
+
+                            // validation form edit
+                            $('#formEdit').validate({
+
+                                rules: {
+                                    name: 'required',
+                                    age: 'required',
+                                    gender: 'required'
+                                },
+
+                                messages: {
+                                    name: "Field username don't be blank",
+                                    age: "Field age don't be blank",
+                                    gender: "Field gender don't be blank"
+                                },
+
+                                highlight: function(element) {
+                                    $(element).children().addClass('error')
+                                },
+                                unhighlight: function(element) {
+                                    $(element).children().removeClass('error')
+                                },
+
+                                // do update data
+                                submitHandler: function(form) {
+                                    $.ajax({
+                                        url: 'updateData.php',
+                                        type: $(form).attr('method'),
+                                        data: $(form).serialize(),
+                                        success: function(response) {
+                                            $('[type=text]').val('')
+                                            loadData();
+                                            Swal.fire(
+                                                'Updated!',
+                                                'Your record has been updated successfully.',
+                                                'success'
+                                            )
+                                            // delete message when after half second
+                                            setTimeout(function() {
+                                                $('#editData').modal('hide');
+                                            }, 1000)
+
+                                        }
+                                    });
+                                }
+                            });
+
+                            // end modal
+                        }).on('hide.bs.modal', function(event) {
+                            $(this).find('#modal-edit').html("")
+                        })
+
+                
+
+                    function loadMore(lastID) {
+                        $('#loadMoreSpinner').addClass('fa-spin');
+                        $.ajax({
+                            url: 'getData.php?lastID=' + lastID,
+                            type: 'GET',
+                            success: function(data) {
+                                setTimeout(() => {
+                                    $("#mainContent").html('');
+                                    $('#viewMore_' + lastID).html('');
+                                    $('#mainContent').append(data);
+                                }, 1000);
+                            }
+                        })
+                    }
+                </script>
+
 </body>
 
 </html>
