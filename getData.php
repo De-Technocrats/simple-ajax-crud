@@ -67,18 +67,6 @@ if (isset($_GET['lastID']) && $_GET['lastID'] != '') {
     $i = 1;
     $lastID = '';
 ?>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th style="display:none;">Id</th>
-                <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
             <?php
             // fetch the data from database
             if ($row = mysqli_num_rows($sqlQuery)) {
@@ -142,18 +130,6 @@ if (isset($_GET['lastID']) && $_GET['lastID'] != '') {
     $i = 1;
     $lastID = '';
     ?>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th style="display:none;">Id</th>
-                <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
             <?php
             // fetch the data from database
             while ($data = mysqli_fetch_assoc($data_users)) {
